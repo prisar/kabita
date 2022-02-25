@@ -7,21 +7,29 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    var body: some View {
-        List {
-            Section(header: HStack {
-                Image(systemName: "person.fill")
-                Text("Corporate Users")
-                }) {
-                    ForEach(0..<3) { index in
-        48
-        HStack {
-                            Image(systemName: "person")
-                            Text("User id : \(index)")
-        } }
-        } }
+struct Seat {
+    var seatNumber: Int
+    @State private var booked = false
 
+    mutating func bookSeat(seatNumber: Int) {
+        self.seatNumber = seatNumber
+    }
+    
+//    var toggleBooking: Bool {
+//                return self.booked.toggle()
+//    }
+}
+
+struct ContentView: View {
+    private let radius: CGFloat = 25.0
+    
+    var body: some View {
+        ZStack {
+                        Circle().fill(Color.green)
+                        Circle().fill(Color.yellow).scaleEffect(0.8)
+                        Circle().fill(Color.orange).scaleEffect(0.6)
+                        Circle().fill(Color.red).scaleEffect(0.4)
+        }
     }
 }
 
