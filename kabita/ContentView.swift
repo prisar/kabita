@@ -13,6 +13,7 @@ struct Joke: Codable {
 
 struct ContentView: View {
     @State private var joke: String = ""
+    @State private var scale = 1.0
     
     var body: some View {
         Text(joke)
@@ -22,9 +23,12 @@ struct ContentView: View {
                 let decodedResponse = try? JSONDecoder().decode(Joke.self, from: data)
                 joke = decodedResponse?.value ?? ""
             }
+            scale = scale > 2 ? 1 : scale + 1
         } label: {
             Text("Fetch Joke")
         }
+        .scaleEffect(scale)
+                .animation(.linear(duration: 1), value: scale)
        
         VStack {
             HStack {
