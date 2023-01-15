@@ -2,7 +2,7 @@
 //  kabitaUITests.swift
 //  kabitaUITests
 //
-//  Created by prisar on 15/01/23.
+//  Created by prisar on 12/02/22.
 //
 
 import XCTest
@@ -27,8 +27,7 @@ final class kabitaUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        // Use recording to get started writing UI tests.
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
