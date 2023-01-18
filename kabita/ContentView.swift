@@ -23,7 +23,7 @@ struct ContentView: View {
                 let decodedResponse = try? JSONDecoder().decode(Joke.self, from: data)
                 joke = decodedResponse?.value ?? ""
             }
-            scale = scale > 2 ? 1 : scale + 1
+            scale = scale > 1 ? 1 : scale + 0.5
         } label: {
             Text("Fetch Joke")
         }
